@@ -1,0 +1,9 @@
+mongodb_url: "mongodb://addressbook_mongodb:27017/"
+
+mongodb_name: "customer"
+
+mongodb_collection_name: "user_details"
+
+grpc_port: 50057
+
+
