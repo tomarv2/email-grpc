@@ -11,7 +11,9 @@ info = {"id": "1",
 
 def create_db(dbname):
     db = client[dbname]
+
     collection = db.user_details
+
     result = collection.insert_one(info)
 
 def main():

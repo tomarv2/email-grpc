@@ -4,6 +4,6 @@ mongodb_name: "customer"
 
 mongodb_collection_name: "user_details"
 
-grpc_port: 50057
+grpc_port: 27018
 
 

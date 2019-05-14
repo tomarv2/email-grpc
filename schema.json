@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package search_insert;
+
+service address_info {
+  rpc insert_user (user_info) returns (user_info) {}
+}

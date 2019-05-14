@@ -15,51 +15,51 @@ gRPC is a modern, open source, high-performance remote procedure call (RPC) fram
 - Metrics (last)
 ```
 
-<$ python -m pip install virtualenv
-
+**Setup env**
+```$ python -m pip install virtualenv
 $ virtualenv venv
-
 $ source venv/bin/activate
-
 $ python -m pip install --upgrade pip
+$ python setup.py install (located in the base path)
+```
 
 **Install gRPC**
-$ sudo python -m pip install grpcio
+```$ sudo python -m pip install grpcio```
 
 **Install gRPC tools**
-$ python -m pip install grpcio-tools
+```$ python -m pip install grpcio-tools```
 
 **Run a gRPC application**
-From the helloworld directory:
+From respective server and client directory:
 
 **Run the server**
-$ python greeter_server.py
+```$ python addressbook_server.py```
 
-**In another terminal, run the client**
-$ python greeter_client.py
+**Run the client**
+```$ python addressbook_client.py```
 
 **create stub from proto file**
-$ python -m grpc_tools.protoc -I../../protos --python_out=. --grpc_python_out=. addressbook.proto
-
+```$ python -m grpc_tools.protoc -I../../protos --python_out=. --grpc_python_out=. addressbook.proto```
 
 **Note**
 https://www.grpc.io/docs/quickstart/python/
 
 **Start the app and mongo db**
-
-docker-compose up --build 
+```docker-compose up --build```
 
 (ensure port in the docker file for address_book and the addressbook_client is same)
 
---no-deps - Don't start linked services.
+```--no-deps``` - Don't start linked services.
 
---build - Build images before starting containers.
+```--build``` - Build images before starting containers.
 
 **MongoDB on mac**
 
 Use:
 
 1. MongoDB Compass 
-2. brew install mongodb
+2. ```brew install mongodb```
+
+**Arcitectural diagram**
 
 ![Sample app](diagrams/grpc.png)

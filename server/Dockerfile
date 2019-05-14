@@ -26,6 +26,7 @@ COPY mongo_setup mongo_setup
 RUN chmod -R 755 mongo_setup
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
+RUN python setup.py install
 
 # Install gRPC
 RUN python -m pip install grpcio

@@ -11,23 +11,12 @@ RUN apt install -y python3-pip
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 RUN update-alternatives --config python
 
+
 # Copy files
-COPY *.proto .
 COPY *.py ./
-COPY *.yaml ./
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 RUN python setup.py install
 
-# Install gRPC
-RUN python -m pip install grpcio
-
-# Install gRPC tools
-RUN python -m pip install grpcio-tools
-
-# Create stub files
-RUN python -m grpc_tools.protoc --proto_path=. ./addressbook.proto --python_out=. --grpc_python_out=.
-
-#Expose port and start application
-EXPOSE 50056
-CMD [ "python", "addressbook_client.py" ]
+EXPOSE 5000
+CMD [ "python", "server.py" ]

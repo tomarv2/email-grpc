@@ -1,15 +1,25 @@
 version: "2"
 services:
+  
+  addressbook_graphql:
+    build: graphql/.
+    ports:
+    - "5000:5000"
+    depends_on: 
+    - addressbook_server
+
   addressbook_client:
     build: client/.
     depends_on:
     - addressbook_server
+
   addressbook_server:
     build: server/.
     ports:
-    - "50056:50056"
+    - "27018:27018"
     depends_on:
     - addressbook_mongodb
+
   addressbook_mongodb:
     image: mongo
     ports:

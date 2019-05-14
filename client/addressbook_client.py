@@ -18,7 +18,6 @@ def run():
             print('Failed with {0}: {1}'.format(e.code(), e.details()))
 
 
-
 if __name__ == '__main__':
     logging.basicConfig()
     run()

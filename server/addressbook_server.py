@@ -4,11 +4,11 @@ import logging
 import grpc
 import addressbook_pb2
 import addressbook_pb2_grpc
-import find_entry_in_connections
-import insert_into_db
 import time
-import create_database
 import yaml_parser
+from mongo_setup import create_database
+from mongo_setup import find_entry_in_connections
+from mongo_setup import insert_into_db
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
@@ -16,7 +16,7 @@ class Server(addressbook_pb2_grpc.address_infoServicer):  # looking for stub of 
 
     def search_user(self, request, context): # instantiate the rpc function defined in proto file
         out = find_entry_in_connections.find_entry(yaml_parser.mongodb_out('mongodb_name'), {'email': request.email})
-        f= open("output.txt","w+")
+        f= open("/tmp/output.txt","w+")
         f.write(str(out))
         if out is not None:
             return addressbook_pb2.user_info( id      = int(out['id']),
