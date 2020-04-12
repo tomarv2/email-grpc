@@ -27,7 +27,7 @@ schema = graphene.Schema(query=Query)
 ###  This is example of query (`query something` is optional, can be removed )
 query = """
     query something{
-      email (email:"test@gmail.com") {
+      email (email:"demo@demo.com") {
         email
         firstName
         lastName

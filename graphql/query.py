@@ -5,7 +5,7 @@ import schema
 def query_url():
     q = """
     query something{
-      email (email:"test@gmail.com") {
+      email (email:"demo@demo.com") {
         email
         firstName
         lastName

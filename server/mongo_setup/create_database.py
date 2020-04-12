@@ -6,7 +6,7 @@ client = pymongo.MongoClient("mongodb://addressbook_mongodb:27017/")
 info = {"id": "1",
             "first_name": "John",
             "last_name": "Doe",
-            "email": "devopsac@gmail.com"
+            "email": "demo@demo.com"
         }
 
 def create_db(dbname):

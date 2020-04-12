@@ -59,7 +59,7 @@ def serve():
 
 if __name__ == '__main__':
     logging.basicConfig()
-    # func_input = addressbook_pb2.user_email(email = 'devopsac@gmail.com')
+    # func_input = addressbook_pb2.user_email(email = 'demo@demo.com')
     # test = Server()
     # test.search_user(func_input)
     serve() # fixed

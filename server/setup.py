@@ -11,7 +11,7 @@ if __name__ == "__main__":
         version="0.0.1",
         packages=find_packages(),
         author='devops_team',
-        author_email='devopsac@email.com',
+        author_email='demo@demo.com',
         install_requires=requires,
         include_package_data=True,
     )
